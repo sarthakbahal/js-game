@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Jan-ken-pon</title>
+    </head>
+
+    <body>
+
+    </body>
+
+    <script>
+        function getComputerChoice(){
+            let roc = "Rock";
+            let pap = "Paper";
+            let sci = "Scissors";
+            let calc = Math.floor(Math.random()*3+1)
+            if (calc == 1){
+                return roc
+            }
+            else if (calc == 2){
+                return pap
+            }
+            else {
+                return sci
+            }
+        }
+
+        
+
+        function playRound(playerSel, compSel){
+            switch(playerSel){
+                case "rock" : 
+                    if (compSel === "Rock"){
+                        alert("Its a TIE ")
+                    }else if(compSel === "Paper"){
+                        alert("You LOSE, paper beats rock")
+
+                    }else{
+                        alert("You WIN , rock beats scissors")
+                    }
+                    break;
+            
+        
+                case "paper" : 
+                    if (compSel === "paper"){
+                        alert("Its a TIE! ")
+                    }else if(compSel === "Scissors"){
+                        alert("You LOSE, scissors beats paper")
+
+                    }else{
+                        alert("You WIN , paper beats rock")
+                    }
+                    break;
+                    
+                case "scissors" : 
+                    if (compSel === "scissors"){
+                        alert("Its a TIE ")
+                    }else if(compSel === "Paper"){
+                        alert("You WIN, scissors beats paper")
+
+                    }else{
+                        alert("You lose , rock beats scissors")
+                    }
+                    break;    
+            
+            
+            }
+        
+                
+        
+        
+        
+        
+        
+        
+        
+        
+        }
+
+
+
+
+
+
+
+        const playerSel = prompt("Please write your move:").toLowerCase() 
+        const compSel = getComputerChoice();
+        
+        console.log(compSel)
+        playRound(playerSel, compSel);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
