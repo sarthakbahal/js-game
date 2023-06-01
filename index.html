@@ -33,11 +33,16 @@
                 case "rock" : 
                     if (compSel === "Rock"){
                         alert("Its a TIE ")
+                        compScor += 1;
+                        playerScor += 1;
+                    
                     }else if(compSel === "Paper"){
                         alert("You LOSE, paper beats rock")
+                        compScor += 1;
 
                     }else{
                         alert("You WIN , rock beats scissors")
+                        playerScor += 1;
                     }
                     break;
             
@@ -45,22 +50,30 @@
                 case "paper" : 
                     if (compSel === "paper"){
                         alert("Its a TIE! ")
+                        compScor += 1;
+                        playerScor += 1;
+                    
                     }else if(compSel === "Scissors"){
                         alert("You LOSE, scissors beats paper")
-
+                        compScor += 1;
                     }else{
                         alert("You WIN , paper beats rock")
+                        playerScor += 1;
                     }
                     break;
                     
                 case "scissors" : 
                     if (compSel === "scissors"){
                         alert("Its a TIE ")
+                        compScor += 1;
+                        playerScor += 1;
                     }else if(compSel === "Paper"){
                         alert("You WIN, scissors beats paper")
+                        playerScor += 1;
 
                     }else{
                         alert("You lose , rock beats scissors")
+                        compScor += 1;
                     }
                     break;    
             
@@ -68,7 +81,7 @@
             }
         
                 
-        
+            
         
         
         
@@ -83,12 +96,34 @@
 
 
 
-
-        const playerSel = prompt("Please write your move:").toLowerCase() 
-        const compSel = getComputerChoice();
+        let playerScor = 0;
+        let compScor = 0;
         
-        console.log(compSel)
-        playRound(playerSel, compSel);
+        
+        
+        
+        
+
+        function game(){
+            let i = 0;
+            while (i < 5){
+                let playerSel = prompt("Please write your move:").toLowerCase() 
+                let compSel = getComputerChoice();
+        
+                playRound(playerSel, compSel);
+                i++;
+            }
+
+            if (playerScor > compScor) {
+                alert("YOU WIN HOORAY!!!!")
+            }else if(playerScor == compScor){
+                alert("The match was TIED!!")
+            }else{
+                alert("You lose !")
+            }
+        }
+
+        game();
     </script>
 
 
